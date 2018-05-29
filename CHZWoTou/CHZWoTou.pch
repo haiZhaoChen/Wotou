@@ -1,0 +1,261 @@
+//
+//  CHZWoTou.pch
+//  CHZWoTou
+//
+//  Created by 陈海召 on 2017/1/8.
+//  Copyright © 2017年 陈海召. All rights reserved.
+//
+
+#ifndef CHZWoTou_pch
+#define CHZWoTou_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIView+CHZUIViewSize.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AFNetworking.h>
+#import <MJRefresh/MJRefresh.h>
+#import "UIImage+CHZ.h"
+#import "CHZLoginOutViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+
+#ifdef DEBUG
+#define HZLog(...) NSLog(__VA_ARGS__)
+#else
+#define HZLog(...)
+#endif
+
+#define kScreenSize [UIScreen mainScreen].bounds.size
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+//控制器里的视图宽高
+#define KWIDTH self.view.frame.size.width
+#define KHEIGHT self.view.frame.size.height
+
+#define HZLogFunc HZLog(@"%s",__func__)
+
+//通知
+#define CHZNotificationCenter [NSNotificationCenter defaultCenter]
+#define API_MAINNum 1000
+#define CHZRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define CHZGlobalBg CHZRGBColor(223, 223, 223)
+#define CHZGlobalColor CHZRGBColor(255, 103, 0)
+
+
+
+
+// 导航栏标题颜色
+#define CHZNavigationBarTitleColor CHZRGBColor(255, 255, 255)
+// 导航栏标题字体
+#define CHZNavigationBarTitleFont [UIFont boldSystemFontOfSize:20]
+#define CHZBarButtonTitleColor CHZRGBColor(239, 113, 0)
+#define CHZBarButtonTitleDisabledColor CHZRGBColor(208, 208, 208)
+
+// 导航栏按钮文字字体
+#define CHZBarButtonTitleFont [UIFont systemFontOfSize:15]
+
+#define CHZTextFont [UIFont systemFontOfSize:15]
+#define CHZTitleFont [UIFont systemFontOfSize:18]
+/** 导航栏 */
+#define CHZNavigationBarColor CHZRGBColor(237, 101, 1)
+
+// 数据存储
+#define CHZUserDefaults [NSUserDefaults standardUserDefaults]
+
+
+//测试API
+//#define API_MAIN @"http://ceshi.wtzhanche.com"
+//生产API
+#define API_MAIN @"http://m.wt668.com"
+
+//#define API_MAIN @"https://118.244.233.247:80"
+//#define API_MAIN @"http://ceshi.wt668.com"
+
+//图片添加地址
+#define API_IMGMAIN @""API_MAIN@"/public/uploads/images/"
+
+//登陆
+#define API_LOGIN @""API_MAIN@"/index.php/api/login/dologin"
+//文章
+#define API_ARTICLE @""API_MAIN@"/index.php/api/article/index"
+
+
+//管理
+#define API_MASTER @""API_MAIN@"/index.php/api/article/index"
+
+//首页标头
+#define API_TITLENAME @""API_MAIN@"/index.php/api/index/index"
+
+//网站公告
+#define API_NOTICE @""API_MAIN@"/index.php/api/index/notice"
+
+//栏目列表
+#define API_ARTLIST @""API_MAIN@"/index.php/api/article/columnList"
+
+//美文列表
+#define API_BOOKARTICLE @""API_MAIN@"/index.php/api/book/arList"
+//图书列表
+#define API_BOOKVIDEO @""API_MAIN@"/index.php/api/book/bookList"
+
+//个人信息
+#define API_USERINFO @""API_MAIN@"/index.php/api/Ucenter/userInfo"
+
+//检查注册账号的唯一
+#define API_CHECKNAMEONLY @""API_MAIN@"/index.php/api/Register/checkName"
+
+//注册
+#define API_APPLYFORREGIST @""API_MAIN@"/index.php/api/Register/doRegister"
+//用户协议
+#define API_XIYI @""API_MAIN@"/index.php/api/Edit_Img/agreement"
+
+//申请代理商
+#define API_APPLYFORDELE @""API_MAIN@"/index.php/api/Register/doAgRegister"
+//申请代理商图片上传
+#define API_IMGORDELE @""API_MAIN@"/index.php/api/Register/upcard"
+
+
+//检查用户名的唯一
+#define API_CHECKNAMEONLY @""API_MAIN@"/index.php/api/Register/checkName"
+//检查代理人账号的唯一
+#define API_CHECKAGENTONLY @""API_MAIN@"/index.php/api/Register/checkAgent"
+
+//换头像
+#define API_HEADERICON @""API_MAIN@"/index.php/api/Ucenter/updHeadpic"
+//修改个人信息
+#define API_UPDATEUSERINFO @""API_MAIN@"/index.php/api/Ucenter/updUserInfo"
+
+//换二维码
+#define API_QRCODE @""API_MAIN@"/index.php/api/Ucenter/updqrcode"
+
+//修改密码
+#define API_PWDCHANGE @""API_MAIN@"/index.php/api/Ucenter/doChePwd"
+//经营项目
+#define API_PROJECTLIST @""API_MAIN@"/index.php/api/Ucenter/project"
+//经营项目上传单张图片
+#define API_PROJECTIMGUP @""API_MAIN@"/index.php/api/Ucenter/upProject"
+
+//经营项目上传所有数据
+#define API_PROJECTCOMMIT @""API_MAIN@"/index.php/api/Ucenter/updProject"
+
+//轮播图list
+#define API_ADIMGLIST @""API_MAIN@"/index.php/api/Ucenter/ad"
+//轮播图上传图片
+#define API_ADIMGUP @""API_MAIN@"/index.php/api/Ucenter/upAd"
+//轮播图上传所有数据
+#define API_ADCOMMIT @""API_MAIN@"/index.php/api/Ucenter/updAd"
+
+//注册页轮播图
+#define API_REGISTVIEWIMGLIST @""API_MAIN@"/index.php/api/edit_img/register"
+//地点
+#define API_MAP @""API_MAIN@"/index.php/api/Register/provinces"
+
+//公告
+#define API_NOTICE @""API_MAIN@"/index.php/api/index/notice"
+
+//文章详情
+#define API_ARTICLEINFOGET @""API_MAIN@"/index.php/api/Article/info"
+
+//文章详情
+#define API_NOTICEINFO @""API_MAIN@"/index.php/api/index/noticeInfo?aid=%@"
+
+//专访
+#define API_INTERVIERINFO @""API_MAIN@"/index.php/api/interview/index"
+
+//代理商列表
+#define API_AGENTLIST @""API_MAIN@"/index.php/api/Register/index"
+
+//忘记密码
+#define API_FORGETPWD @""API_MAIN@"/index.php/api/login/forgetPwd"
+
+//书MP3
+#define API_BOOKMP3 @""API_MAIN@"/index.php/api/book/bookmp3"
+//书MP4Video
+#define API_BOOKVideo @""API_MAIN@"/index.php/api/book/bookmp4"
+
+//专访MP3
+#define API_INTERVIEWMP3 @""API_MAIN@"/index.php/api/interview/mp3"
+//专访MP4
+#define API_INTERVIEWVIDEO @""API_MAIN@"/index.php/api/interview/mp4"
+
+//读书评论
+#define API_BOOKCOMMENTS @""API_MAIN@"/index.php/api/book/bookReply"
+//专访评论
+#define API_INTERVIEWCOMMENTS @""API_MAIN@"/index.php/api/interview/reply"
+
+
+//读书文字版
+#define API_BOOKTEXTVIEW @""API_MAIN@"/index.php/api/book/bookInfo"
+//专访文字版
+#define API_INTERVIEWTEXTVIEW @""API_MAIN@"/index.php/api/interview/info"
+
+//是否能分享
+#define API_ISCANSHARE @""API_MAIN@"/index.php/api/article/share"
+//book是否能分享
+#define API_BOOKISCANSHARE @""API_MAIN@"/index.php/api/book/share"
+//分享url拼接
+#define API_SHAREURL @""API_MAIN@"/index.php/home/article_info/?aid=%@&uid=%@"
+//book分享url拼接
+#define API_BOOKSHAREURL @""API_MAIN@"/index.php/home/book_article/?aid=%@&uid=%@"
+
+//美文详情
+#define API_SCHOOLARTINFO @""API_MAIN@"/index.php/api/book/arInfo"
+
+//美文详情
+#define API_BOOKDOSHARE @""API_MAIN@"/index.php/api/book/doShare"
+
+//第一页文章详情
+#define API_ARTICLEDOSHARE @""API_MAIN@"/index.php/api/article/doShare"
+
+//美文评论
+#define API_BOOKARTICLECOMMENTS @""API_MAIN@"/index.php/api/book/articleReply"
+
+//关于我们
+#define API_ABOUTWOTOU @""API_MAIN@"/index.php/api/Ucenter/aboutus"
+
+//推广大使
+#define API_TUIGUANDASHI @""API_MAIN@"/index.php/api/share/ambassador"
+
+//启动页图片
+#define API_LAUNCHIMG @""API_MAIN@"/index.php/api/edit_img/start"
+
+//美文评论列表
+#define API_MEIWENCOMMENTSLIST @""API_MAIN@"/index.php/api/book/artReplyList"
+//book评论列表
+#define API_BOOKCOMMENTSLIST @""API_MAIN@"/index.php/api/book/bookReplyList"
+//interveiw评论列表
+#define API_INTERVIEWCOMMENTSLIST @""API_MAIN@"/index.php/api/interview/replyList"
+
+//美文赞
+#define API_ZANPOST @""API_MAIN@"/index.php/api/book/artReplyZan"
+//读书赞
+#define API_BOOKZANPOST @""API_MAIN@"/index.php/api/book/bookReplyZan"
+//专访赞
+#define API_INTERVIEWZANPOST @""API_MAIN@"/index.php/api/interview/replyZan"
+
+//二维码使用指南
+#define API_QRUSEINFO @""API_MAIN@"/index.php/api/share/qr_code"
+//默认网址
+#define API_DEFAULTWEB @""API_MAIN@"/index.php/home/mycard/index.html?uid=1"
+
+//我的优势
+#define API_YOUSHI @""API_MAIN@"/index.php/api/Ucenter/youshi"
+//帮助
+#define API_HELP @""API_MAIN@"/index.php/api/Ucenter/help"
+//推广状态
+#define API_TUIGSTATE @""API_MAIN@"/index.php/api/Ucenter/promote"
+
+//会员权益
+#define API_VIPRIGHT @""API_MAIN@"/index.php/api/Ucenter/right"
+
+//支付
+#define API_PAYFORWECHAT @""API_MAIN@"/index.php/api/Wxpay/index"
+
+//
+#define WECHATAPI @"1b5434186edb0"
+#define WECHATAPI_PAY @"wxdd059f98e09921e2"
+
+#endif /* CHZWoTou_pch */

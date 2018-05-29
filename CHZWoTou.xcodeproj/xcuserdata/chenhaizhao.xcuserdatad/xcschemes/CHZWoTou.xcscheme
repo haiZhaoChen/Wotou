@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1256F751E18AAF20033A4EA"
-               BuildableName = "CHZWoTouTests.xctest"
-               BlueprintName = "CHZWoTouTests"
+               BuildableName = "CHZ.xctest"
+               BlueprintName = "CHZ"
                ReferencedContainer = "container:CHZWoTou.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -81,6 +81,13 @@
             ReferencedContainer = "container:CHZWoTou.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MOD"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

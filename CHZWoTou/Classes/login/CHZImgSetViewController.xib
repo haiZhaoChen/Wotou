@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHZImgSetViewController">
+            <connections>
+                <outlet property="imgView" destination="UDN-0k-BYP" id="IgN-AW-LB1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picture_Clipping" translatesAutoresizingMaskIntoConstraints="NO" id="UDN-0k-BYP">
+                    <rect key="frame" x="37" y="183" width="300" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="W0j-9Y-BXt"/>
+                        <constraint firstAttribute="width" constant="300" id="ptN-FQ-nzA"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjA-AV-cXn">
+                    <rect key="frame" x="37" y="183" width="300" height="300"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="点击添加图片"/>
+                    <connections>
+                        <action selector="addImgBtnClick:" destination="-1" eventType="touchUpInside" id="5Ne-5g-eC5"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OjA-AV-cXn" firstAttribute="trailing" secondItem="UDN-0k-BYP" secondAttribute="trailing" id="DSg-PX-t09"/>
+                <constraint firstItem="OjA-AV-cXn" firstAttribute="leading" secondItem="UDN-0k-BYP" secondAttribute="leading" id="EFZ-lI-Ark"/>
+                <constraint firstItem="OjA-AV-cXn" firstAttribute="top" secondItem="UDN-0k-BYP" secondAttribute="top" id="NTo-pG-vMm"/>
+                <constraint firstItem="UDN-0k-BYP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Plo-1y-MaF"/>
+                <constraint firstItem="OjA-AV-cXn" firstAttribute="bottom" secondItem="UDN-0k-BYP" secondAttribute="bottom" id="efd-JM-Fv2"/>
+                <constraint firstItem="UDN-0k-BYP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fvu-SC-K2U"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Picture_Clipping" width="128" height="128"/>
+    </resources>
+</document>
