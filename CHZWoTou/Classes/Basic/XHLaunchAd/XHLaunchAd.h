@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+
 @class XHLaunchAd;
 
 @protocol XHLaunchAdDelegate <NSObject>
